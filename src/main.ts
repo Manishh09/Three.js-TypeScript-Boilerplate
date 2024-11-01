@@ -1,6 +1,7 @@
  
 import './style.css'
 import * as THREE from 'three'
+import { OrbitControls} from 'three/examples/jsm/controls/OrbitControls.js'
 
 const scene = new THREE.Scene()
 
@@ -17,6 +18,10 @@ window.addEventListener('resize', () => {
   renderer.setSize(window.innerWidth, window.innerHeight)
 })
 
+// OrbitControls
+ new OrbitControls(camera, renderer.domElement)
+
+
 const geometry = new THREE.BoxGeometry()
 const material = new THREE.MeshNormalMaterial({ wireframe: true })
 
@@ -25,9 +30,10 @@ scene.add(cube)
 
 function animate() {
   requestAnimationFrame(animate)
-
-  cube.rotation.x += 0.01
-  cube.rotation.y += 0.01
+  // comment below to see the effect of Orbit controls
+  
+  // cube.rotation.x += 0.01
+  // cube.rotation.y += 0.01
 
   renderer.render(scene, camera)
 }
