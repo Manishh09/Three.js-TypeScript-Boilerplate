@@ -11,7 +11,7 @@ import { createCamera } from '../helper-functions/camera'
 
 export function sceneDemo() {
 
-
+  
   // Scene
   const sceneA = createScene('color')
 
